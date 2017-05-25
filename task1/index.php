@@ -1,0 +1,20 @@
+<?php
+require_once "Car.php";
+require_once "CarRepository.php";
+$car1 = new Car(1, "BMW", "X6", 2013, "black", 100000, "AX7777AH");
+$car2 = new Car(2, "BMW", "X5", 2011, "pink", 95000, "AX7953AH");
+$car3 = new Car(3, "Opel", "Combo", 2005, "red", 20000, "AX4385AH");
+$car4 = new Car(4, "Mazda", "RX8", 2009, "white", 150000, "AX6565AH");
+$car5 = new Car(5, "Audi", "A6", 2004, "silver", 90000, "AX7934AH");
+$car6 = new Car(6, "Chevrolet", "Camaro", 2008, "yellow", 60000, "AX5432AH");
+$car7 = new Car(7, "Chevrolet", "Camaro", 2004, "yellow", 50000, "AX7490AH");
+$car8 = new Car(8, "Chevrolet", "Camaro", 2011, "yellow", 70000, "AX8164AH");
+$cars = [$car1, $car2, $car3, $car4, $car5, $car6, $car7, $car8];
+$autoByModel = new CarRepository;
+$camaro = $autoByModel->getByModel($cars, "Camaro", 2012);
+print_r($camaro);
+echo "<br>";
+$autoByMark = new CarRepository;
+$bmw = $autoByMark->getByMark($cars, "BMW");
+print_r($bmw);
+echo "<br>";
